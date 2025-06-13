@@ -3,6 +3,7 @@ import { ChattyServer } from './setupServer';
 import databaseConnection from './setupDatabase';
 import { config } from './config';
 
+// main starter
 class Application {
   public initialize(): void {
     this.loadConfig();
