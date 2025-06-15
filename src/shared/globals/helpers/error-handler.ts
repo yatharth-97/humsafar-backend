@@ -13,6 +13,7 @@ export interface IError {
   status: string;
 }
 
+// since I am using abstract class that means I cannot use CustomError class directly -> new CustomError() ❌
 export abstract class CustomError extends Error {
   abstract statusCode: number;
   abstract status: string;
@@ -23,7 +24,7 @@ export abstract class CustomError extends Error {
 
   serializeErrors(): IError {
     return {
-      message: this.message,
+      message: this.message, // aiming for Error class message
       status: this.status,
       statusCode: this.statusCode
     };
